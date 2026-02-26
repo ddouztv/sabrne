@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultra Legend Lover 2.0 ❤️ Sabrine</title>
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg,#1a1a1a,#000,#333,#111);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    overflow:hidden;
+    text-align:center;
+    color:#FFD700;
+    position: relative;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+h1{
+    font-size:5vw;
+    margin-top:5vh;
+    text-shadow:0 0 10px #FFD700,0 0 20px #FFD700;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from {text-shadow:0 0 10px #FFD700,0 0 20px #FFD700;}
+    to {text-shadow:0 0 30px #FFA500,0 0 60px #FFD700;}
+}
+
+p{
+    font-size:4vw;
+    margin-bottom:2vh;
+}
+
+/* الفيديو المخفي */
+#hiddenVideo{
+    width:90%;
+    max-width:600px;
+    border-radius:20px;
+    box-shadow:0 0 60px #FFD700;
+    margin-top:3vh;
+    display:none;
+    border: 3px solid #FFD700;
+}
+
+/* الزر */
+button{
+    margin-top:3vh;
+    padding:2vh 5vw;
+    font-size:4vw;
+    border:none;
+    border-radius:35px;
+    background:#FFD700;
+    color:#1a1a1a;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #FFD700,0 0 40px #FFA500;
+}
+
+/* قلوب */
+.heart{
+    position:absolute;
+    color:#FFD700;
+    font-size:5vw;
+    animation: float 6s linear infinite;
+    text-shadow:0 0 10px #FFD700;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh) rotate(0deg); opacity:1;}
+    100%{transform:translateY(-10vh) rotate(360deg); opacity:0;}
+}
+
+/* نجوم */
+.star{
+    position:absolute;
+    color:white;
+    font-size:2vw;
+    opacity:0.8;
+}
+
+/* ثلوج */
+.snow{
+    position:absolute;
+    color:white;
+    font-size:2vw;
+    animation:snowFall linear infinite;
+}
+
+@keyframes snowFall{
+    0%{transform:translateY(-5vh);}
+    100%{transform:translateY(105vh);}
+}
+
+/* رسالة نيون */
+#loveMessage{
+    font-size:5vw;
+    color:#FF69B4;
+    text-shadow:0 0 5px #FF69B4,0 0 20px #FFD700;
+    opacity:0;
+    transition: opacity 2s;
+}
+
+/* استجابة الهاتف */
+@media(max-width:600px){
+    h1{font-size:8vw;}
+    p{font-size:5vw;}
+    button{font-size:5vw; padding:2vh 10vw;}
+    #loveMessage{font-size:7vw;}
+}
+</style>
+</head>
+<body>
+
+<!-- الموسيقى -->
+<audio id="audioMusic" loop>
+    <source src="موسيقى - اسجل روحي - Asjal Ruwhi.mp3" type="audio/mpeg">
+</audio>
+
+<h1>Ultra Legend Lover 2.0 ❤️ Sabrine</h1>
+<p>28 Février 🎂✨</p>
+
+<div id="loveMessage">Sabrine ❤️ أحبك بلا حدود 💖</div>
+
+<!-- الفيديو المخفي -->
+<video id="hiddenVideo" controls>
+    <source src="flova_FashionFilm_ChineseDance_video_202602211535_7a705c.mp4" type="video/mp4">
+</video>
+
+<br>
+
+<button onclick="showVideo()">اضغطي هنا 💌</button>
+
+<script>
+// تشغيل الفيديو والموسيقى + ظهور الرسالة
+function showVideo(){
+    let vid = document.getElementById("hiddenVideo");
+    let audio = document.getElementById("audioMusic");
+    let msg = document.getElementById("loveMessage");
+    if(vid.style.display === "none"){
+        vid.style.display = "block";
+        vid.scrollIntoView({behavior:"smooth"});
+        audio.play();
+        msg.style.opacity = 1;
+        alert("Sabrine ❤️ هذا الفيديو ليك وحدك 💖");
+    }
+}
+
+// قلوب متطايرة
+setInterval(()=>{
+    let heart = document.createElement("div");
+    heart.className="heart";
+    heart.style.left=Math.random()*100+"vw";
+    heart.innerHTML="❤";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+},300);
+
+// نجوم عشوائية
+for(let i=0;i<50;i++){
+    let star = document.createElement("div");
+    star.className="star";
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*100+"vh";
+    star.innerHTML="✦";
+    document.body.appendChild(star);
+}
+
+// ثلوج متساقطة
+setInterval(()=>{
+    let snow = document.createElement("div");
+    snow.className="snow";
+    snow.style.left=Math.random()*100+"vw";
+    snow.innerHTML="❄";
+    document.body.appendChild(snow);
+    setTimeout(()=>snow.remove(),8000);
+},500);
+</script>
+
+</body>
+</html>
